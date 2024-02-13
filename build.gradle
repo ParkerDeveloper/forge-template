@@ -1,13 +1,19 @@
 buildscript {
 	repositories {
 		mavenCentral()
+				maven {
+						name = "forge"
+						url = "https://maven.minecraftforge.net/"
+        }
         maven {
             name = "github"
             url = "https://github.com/juanmuscaria/maven/raw/master"
         }
 	}
 	dependencies {
-		classpath 'net.minecraftforge.gradle:ForgeGradle:[1.2-1.4.6-SNAPSHOT,)'
+		classpath 'om.anatawa12.forge:ForgeGradle:[1.2-1.4.6-SNAPSHOT,)' {
+			changing = true
+		}
 	}
 }
 
@@ -32,7 +38,6 @@ minecraft {
 	runDir = "eclipse"
 	replace "@VERSION@", project.version
 }
-
 
 dependencies {
 	compile name: 'Baubles-1.7.10-1.0.1.10-dev'
